@@ -1,0 +1,39 @@
+﻿@page
+@model BulkyWeb_Razor.Pages.Relatives.DeleteModel
+
+<form method="post">
+    <input asp-for="relative.RelativeId" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Delete Relative</h2>
+        </div>
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div class="row mb-3 p-1">
+                <label asp-for="relative.RelativeName" class="p-0"></label>
+                <input asp-for="relative.RelativeName" disabled class="form-control" />
+            </div>
+
+            <div class="row mb-3 p-1">
+                <label asp-for="relative.Relationship" class="p-0"></label>
+                <input asp-for="relative.Relationship" disabled class="form-control" />
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Delete</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-page="Relatives" class="btn btn-secondary form-control">BackToList</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</form>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model BulkyWeb_Razor.Pages.Relatives.CreateModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Create New Relative</h2>
+        </div>
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div class="row mb-3 p-1">
+                <label asp-for="relative.RelativeName" class="p-0"></label>
+                <input asp-for="relative.RelativeName" class="form-control" />
+                <span asp-validation-for="relative.RelativeName" class="text-danger"></span>
+            </div>
+
+            <div class="row mb-3 p-1">
+                <label asp-for="relative.Relationship" class="p-0"></label>
+                <input asp-for="relative.Relationship" class="form-control" />
+                <span asp-validation-for="relative.Relationship" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-page="Relatives" class="btn btn-secondary form-control">BackToList</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</form>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}
